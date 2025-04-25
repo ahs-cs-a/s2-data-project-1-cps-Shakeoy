@@ -62,9 +62,14 @@ public class ReadDataStudent{
              sum += arr[i];
         }
         mean = sum/arr.length;
-        return Math.sqrt(Math.pow(sum-(mean),2)); //sample variance!
+        double a = 0;
+        for (double num : arr) {
+            a += Math.pow(num - mean, 2);
+        }
+        double b = a / (arr.length - 1);
+        return Math.sqrt(b);
     }
-    
+   
     //this returns the mean of the column of data passed in
     //the mean is the sum of the values divided by the number of values
     public double mean(double[] arr){
